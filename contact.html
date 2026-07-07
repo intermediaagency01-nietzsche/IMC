@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Request a Consultation — InterMedia Consulting</title>
+<meta name="description" content="Request a free growth strategy consultation with InterMedia Consulting. Tell us about your business and goals, and we'll respond within one business day.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2306122f'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-size='32' fill='%23c8a366' text-anchor='middle'%3EIM%3C/text%3E%3C/svg%3E">
+<meta property="og:title" content="Request a Consultation — InterMedia Consulting">
+<meta property="og:description" content="Tell us about your business and goals, and we'll respond within one business day to schedule your free growth strategy consultation.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --white:#ffffff;
+  --paper:#f8f7f4;
+  --ink:#1c1e24;
+  --ink-soft:#4d5361;
+  --navy:#10234d;
+  --navy-deep:#06122f;
+  --navy-mid:#0b1c40;
+  --gold:#c8a366;
+  --gold-bright:#ddbb80;
+  --gold-deep:#8f7134;
+  --line:#e7e5df;
+  --radius:18px;
+  --display:'Cormorant Garamond',serif;
+  --body:'Inter',sans-serif;
+  --mono:'IBM Plex Mono',monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--body);color:var(--ink);background:var(--white);line-height:1.6;font-size:16px;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:var(--display);line-height:1.08;letter-spacing:.005em;color:var(--navy)}
+h1{font-size:clamp(2.4rem,5vw,3.8rem);font-weight:600}
+h3{font-size:1.35rem;font-weight:600}
+p{color:var(--ink-soft)}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+.eyebrow{font-family:var(--mono);font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-deep);display:block;margin-bottom:16px}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:6px}
+
+/* ---------- Nav (shared) ---------- */
+nav{position:sticky;top:0;background:rgba(255,255,255,.88);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);z-index:50}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:76px}
+.logo{display:flex;flex-direction:column;line-height:1}
+.logo .word{font-family:var(--display);font-weight:600;font-size:1.55rem;color:var(--navy);letter-spacing:.01em}
+.logo .subword{font-family:var(--body);font-weight:500;font-size:.54rem;letter-spacing:.42em;text-transform:uppercase;color:var(--gold-deep);margin-top:3px;padding-left:2px}
+.nav-links{display:flex;gap:32px;align-items:center;font-size:.92rem;font-weight:500;color:var(--ink-soft)}
+.nav-links a:hover{color:var(--navy)}
+@media(max-width:820px){.nav-links a:not(.nav-current){display:none}}
+.menu-btn{display:none;background:none;border:1px solid var(--line);border-radius:10px;padding:9px 11px;cursor:pointer;line-height:0}
+.menu-btn svg{width:20px;height:20px;stroke:var(--navy);stroke-width:2}
+@media(max-width:820px){
+  .menu-btn{display:block}
+  .nav-inner{position:relative}
+  .nav-links a.nav-current{display:none}
+  .nav-links.open{display:flex;position:absolute;top:76px;left:-24px;right:-24px;background:#fff;border-bottom:1px solid var(--line);flex-direction:column;align-items:flex-start;padding:20px 24px 24px;gap:18px;box-shadow:0 20px 40px rgba(6,18,47,.12)}
+  .nav-links.open a{display:block}
+}
+.nav-current{color:var(--gold-deep);font-weight:600}
+
+/* ---------- Page header ---------- */
+.page-head{padding:96px 0 64px;position:relative;overflow:hidden}
+.page-head::before{content:"";position:absolute;top:-40%;right:-15%;width:640px;height:640px;border-radius:50%;background:radial-gradient(circle,rgba(200,163,102,.13) 0%,rgba(16,35,77,.06) 45%,transparent 70%);pointer-events:none}
+.page-head p.lead{font-size:1.14rem;margin-top:22px;max-width:36rem}
+
+/* ---------- Layout ---------- */
+.contact-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:56px;align-items:start;padding-bottom:120px}
+
+/* ---------- Form ---------- */
+.form-card{background:#fff;border:1px solid var(--line);border-radius:24px;padding:44px;box-shadow:0 24px 60px rgba(6,18,47,.08)}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.field{display:flex;flex-direction:column;gap:8px}
+.field.full{grid-column:1/-1}
+label{font-weight:600;font-size:.88rem;color:var(--navy)}
+label .req{color:var(--gold-deep)}
+label .opt{font-weight:400;color:var(--ink-soft);font-size:.8rem}
+input[type=text],input[type=email],input[type=tel],input[type=url],select,textarea{
+  font-family:var(--body);font-size:.95rem;color:var(--ink);
+  background:var(--paper);border:1px solid var(--line);border-radius:12px;
+  padding:13px 16px;transition:border-color .2s,background .2s,box-shadow .2s;width:100%;appearance:none}
+textarea{resize:vertical;min-height:120px;line-height:1.55}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--gold);background:#fff;box-shadow:0 0 0 3px rgba(200,163,102,.18)}
+input::placeholder,textarea::placeholder{color:#9aa0ac}
+.select-wrap{position:relative}
+.select-wrap::after{content:"";position:absolute;right:16px;top:50%;width:8px;height:8px;border-right:1.5px solid var(--gold-deep);border-bottom:1.5px solid var(--gold-deep);transform:translateY(-70%) rotate(45deg);pointer-events:none}
+
+/* checkboxes */
+.check-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:2px}
+.check{position:relative}
+.check input{position:absolute;opacity:0;inset:0;cursor:pointer;width:100%;height:100%;margin:0}
+.check span{display:flex;align-items:center;gap:10px;border:1px solid var(--line);background:var(--paper);border-radius:12px;padding:11px 14px;font-size:.88rem;font-weight:500;color:var(--ink);transition:border-color .2s,background .2s;cursor:pointer}
+.check span::before{content:"";width:16px;height:16px;flex:none;border:1.5px solid #b9bec9;border-radius:5px;background:#fff;transition:all .15s}
+.check input:checked + span{border-color:var(--gold);background:#fff}
+.check input:checked + span::before{background:var(--navy);border-color:var(--navy);box-shadow:inset 0 0 0 3px #fff}
+.check input:focus-visible + span{outline:3px solid var(--gold);outline-offset:2px}
+
+fieldset{border:none}
+fieldset legend{font-weight:600;font-size:.88rem;color:var(--navy);margin-bottom:8px}
+
+/* submit */
+.cta-btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-family:var(--body);font-weight:600;font-size:.98rem;color:#fff;background:linear-gradient(135deg,var(--navy) 0%,var(--navy-deep) 70%);padding:16px 30px;border-radius:999px;border:1px solid rgba(200,163,102,.35);box-shadow:0 8px 24px rgba(6,18,47,.22);transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease;position:relative;overflow:hidden;cursor:pointer;width:100%}
+.cta-btn::after{content:"";position:absolute;inset:0;background:linear-gradient(135deg,rgba(200,163,102,0) 40%,rgba(200,163,102,.28));opacity:0;transition:opacity .25s ease}
+.cta-btn:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(6,18,47,.32);border-color:rgba(200,163,102,.7)}
+.cta-btn:hover::after{opacity:1}
+.cta-btn:disabled{opacity:.6;cursor:wait;transform:none}
+.cta-btn svg{width:16px;height:16px;flex:none;position:relative;z-index:1;stroke:var(--gold-bright)}
+.cta-btn span{position:relative;z-index:1}
+.form-note{font-size:.8rem;color:var(--ink-soft);text-align:center;margin-top:14px}
+.form-error{display:none;margin-top:16px;background:#fdf6ee;border:1px solid var(--gold);border-radius:12px;padding:14px 18px;font-size:.9rem;color:var(--ink)}
+.form-error.show{display:block}
+.form-error a{color:var(--gold-deep);font-weight:600;border-bottom:1px solid var(--gold)}
+
+/* ---------- Confirmation ---------- */
+.confirm{display:none;text-align:center;padding:56px 32px}
+.confirm.show{display:block}
+.confirm .seal{width:72px;height:72px;border-radius:50%;margin:0 auto 26px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,var(--navy),var(--navy-deep));border:1px solid rgba(200,163,102,.4);box-shadow:0 12px 30px rgba(6,18,47,.25)}
+.confirm .seal svg{width:30px;height:30px;stroke:var(--gold-bright);stroke-width:2.2}
+.confirm h2{font-size:2.1rem;margin-bottom:14px}
+.confirm p{max-width:34rem;margin:0 auto 10px}
+.confirm .back{display:inline-block;margin-top:26px;font-weight:600;color:var(--navy);border-bottom:1px solid var(--gold);padding-bottom:2px}
+
+/* ---------- Sidebar ---------- */
+.aside-card{background:linear-gradient(165deg,var(--navy-deep) 0%,var(--navy-mid) 100%);border:1px solid rgba(200,163,102,.25);border-radius:24px;padding:38px 34px;color:#fff;position:sticky;top:100px}
+.aside-card h3{color:var(--gold-bright);margin-bottom:22px;font-size:1.5rem}
+.next-step{display:flex;gap:16px;margin-bottom:22px}
+.next-step .n{font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;color:var(--gold);border:1px solid rgba(200,163,102,.4);border-radius:50%;width:30px;height:30px;display:flex;align-items:center;justify-content:center;flex:none;margin-top:2px}
+.next-step h4{font-family:var(--body);font-size:.92rem;font-weight:600;color:#fff;margin-bottom:3px}
+.next-step p{font-size:.86rem;color:rgba(255,255,255,.68)}
+.aside-quote{margin-top:26px;padding-top:24px;border-top:1px solid rgba(200,163,102,.25);font-family:var(--display);font-size:1.15rem;line-height:1.4;color:rgba(255,255,255,.85)}
+
+/* ---------- Footer ---------- */
+footer{padding:56px 0;font-size:.88rem;color:var(--ink-soft);border-top:1px solid var(--line)}
+.foot-base{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:.8rem;align-items:center}
+.quiet-link{font-weight:500;color:var(--navy)}
+.quiet-link:hover{color:var(--gold-deep)}
+
+/* ---------- Reveal ---------- */
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease}
+.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .reveal{opacity:1;transform:none;transition:none}
+  .cta-btn{transition:none}
+}
+
+/* ---------- Responsive ---------- */
+@media(max-width:940px){
+  .contact-grid{grid-template-columns:1fr;gap:40px}
+  .aside-card{position:static}
+}
+@media(max-width:640px){
+  .form-card{padding:30px 22px}
+  .form-grid,.check-grid{grid-template-columns:1fr}
+  .page-head{padding:72px 0 44px}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap nav-inner">
+    <a class="logo" href="index.html" aria-label="InterMedia Consulting home">
+      <span class="word">InterMedia</span>
+      <span class="subword">Consulting</span>
+    </a>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html#services">Services</a>
+      <a href="index.html#process">Process</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#faq">FAQ</a>
+      <a class="nav-current" href="contact.html">Request a Consultation</a>
+    </div>
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+      <svg viewBox="0 0 24 24" fill="none"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </div>
+</nav>
+
+<header class="page-head">
+  <div class="wrap">
+    <span class="eyebrow">Request a Consultation</span>
+    <h1>Let's build your growth strategy</h1>
+    <p class="lead">Tell us a little about your business and goals. We'll review your details and respond within one business day to schedule your free strategy consultation.</p>
+  </div>
+</header>
+
+<div class="wrap contact-grid">
+
+  <!-- ============ FORM ============ -->
+  <div class="form-card reveal" id="formCard">
+    <form id="consultForm" novalidate>
+      <div class="form-grid">
+        <div class="field">
+          <label for="fullName">Full name <span class="req">*</span></label>
+          <input type="text" id="fullName" name="Full Name" required autocomplete="name" placeholder="Jane Smith">
+        </div>
+        <div class="field">
+          <label for="companyName">Company name <span class="req">*</span></label>
+          <input type="text" id="companyName" name="Company Name" required autocomplete="organization" placeholder="Smith &amp; Co.">
+        </div>
+        <div class="field">
+          <label for="email">Business email <span class="req">*</span></label>
+          <input type="email" id="email" name="Business Email" required autocomplete="email" placeholder="jane@company.com">
+        </div>
+        <div class="field">
+          <label for="phone">Phone number <span class="opt">(optional)</span></label>
+          <input type="tel" id="phone" name="Phone Number" autocomplete="tel" placeholder="(555) 000-0000">
+        </div>
+        <div class="field">
+          <label for="website">Company website <span class="opt">(optional)</span></label>
+          <input type="url" id="website" name="Company Website" autocomplete="url" placeholder="https://">
+        </div>
+        <div class="field">
+          <label for="industry">Industry <span class="opt">(optional)</span></label>
+          <div class="select-wrap">
+            <select id="industry" name="Industry">
+              <option value="" selected>Select your industry</option>
+              <option>Professional Services</option>
+              <option>Construction</option>
+              <option>Home Services</option>
+              <option>Healthcare</option>
+              <option>Legal</option>
+              <option>Automotive</option>
+              <option>Retail</option>
+              <option>E-Commerce</option>
+              <option>Hospitality</option>
+              <option>Fitness</option>
+              <option>Local Business</option>
+              <option>Other</option>
+            </select>
+          </div>
+        </div>
+
+        <fieldset class="field full">
+          <legend>Services you're interested in <span class="opt">(select all that apply)</span></legend>
+          <div class="check-grid">
+            <label class="check"><input type="checkbox" name="Services" value="Growth Strategy"><span>Growth Strategy</span></label>
+            <label class="check"><input type="checkbox" name="Services" value="Paid Advertising"><span>Paid Advertising</span></label>
+            <label class="check"><input type="checkbox" name="Services" value="AI Automation"><span>AI Automation</span></label>
+            <label class="check"><input type="checkbox" name="Services" value="Business Automation"><span>Business Automation</span></label>
+            <label class="check"><input type="checkbox" name="Services" value="Lead Generation"><span>Lead Generation</span></label>
+            <label class="check"><input type="checkbox" name="Services" value="CRM & Sales Systems"><span>CRM &amp; Sales Systems</span></label>
+            <label class="check"><input type="checkbox" name="Services" value="Website Development"><span>Website Development</span></label>
+            <label class="check"><input type="checkbox" name="Services" value="Other"><span>Other</span></label>
+          </div>
+        </fieldset>
+
+        <div class="field full">
+          <label for="about">Tell us about your business <span class="req">*</span></label>
+          <textarea id="about" name="About the Business" required placeholder="What does your business do, who do you serve, and what challenges are you facing?"></textarea>
+        </div>
+
+        <div class="field full">
+          <label for="goals">What are your primary goals over the next 6–12 months? <span class="opt">(optional)</span></label>
+          <textarea id="goals" name="Primary Goals (6-12 months)" placeholder="e.g. Increase qualified leads, enter a new market, automate follow-up..."></textarea>
+        </div>
+
+        <div class="field full">
+          <label for="budget">Monthly marketing budget <span class="opt">(optional)</span></label>
+          <div class="select-wrap">
+            <select id="budget" name="Monthly Marketing Budget">
+              <option value="" selected>Select a range</option>
+              <option>Under $1,000</option>
+              <option>$1,000 – $2,500</option>
+              <option>$2,500 – $5,000</option>
+              <option>$5,000 – $10,000</option>
+              <option>$10,000+</option>
+              <option>Prefer not to say</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- honeypot for spam bots -->
+        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+
+        <div class="field full">
+          <button type="submit" class="cta-btn" id="submitBtn">
+            <span id="btnText">Submit Consultation Request</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </button>
+          <p class="form-note">No obligation. Your information is only used to prepare your consultation.</p>
+          <div class="form-error" id="formError">
+            Something went wrong sending your request. Please try again, or email us directly at
+            <a href="mailto:Intermediaagency01@gmail.com">Intermediaagency01@gmail.com</a>.
+          </div>
+        </div>
+      </div>
+    </form>
+
+    <!-- ============ CONFIRMATION ============ -->
+    <div class="confirm" id="confirmPanel" role="status">
+      <div class="seal">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M4 12.5l5 5L20 6.5"/></svg>
+      </div>
+      <h2>Thank you for your inquiry</h2>
+      <p>We've received your consultation request and appreciate you taking the time to share the details of your business.</p>
+      <p>A member of our team will review your information and respond within <strong>one business day</strong> to schedule your free growth strategy consultation.</p>
+      <a class="back" href="index.html">← Return to homepage</a>
+    </div>
+  </div>
+
+  <!-- ============ SIDEBAR ============ -->
+  <aside class="aside-card reveal">
+    <h3>What happens next</h3>
+    <div class="next-step">
+      <span class="n">01</span>
+      <div><h4>We review your details</h4><p>Your submission goes straight to our strategy team — never a sales queue.</p></div>
+    </div>
+    <div class="next-step">
+      <span class="n">02</span>
+      <div><h4>We respond within one business day</h4><p>You'll receive a reply to schedule a time that works for you.</p></div>
+    </div>
+    <div class="next-step">
+      <span class="n">03</span>
+      <div><h4>Your free strategy consultation</h4><p>A focused conversation about your business, goals, and the growth opportunities we see.</p></div>
+    </div>
+    <p class="aside-quote">"Business growth isn't about doing more. It's about building better systems."</p>
+  </aside>
+</div>
+
+<footer>
+  <div class="wrap foot-base">
+    <span>© 2026 InterMedia Consulting. All rights reserved.</span>
+    <span><a href="index.html" class="quiet-link">Home</a> &nbsp;·&nbsp; <a href="#" class="quiet-link">Privacy Policy</a> &nbsp;·&nbsp; <a href="#" class="quiet-link">Terms of Service</a></span>
+  </div>
+</footer>
+
+<script>
+// scroll reveal
+const io = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+},{threshold:.1});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+const menuBtn = document.getElementById('menuBtn');
+const navLinks = document.getElementById('navLinks');
+menuBtn.addEventListener('click', () => {
+  const open = navLinks.classList.toggle('open');
+  menuBtn.setAttribute('aria-expanded', open);
+});
+
+// form submission via FormSubmit (AJAX)
+const form = document.getElementById('consultForm');
+const btn = document.getElementById('submitBtn');
+const btnText = document.getElementById('btnText');
+const errBox = document.getElementById('formError');
+const confirmPanel = document.getElementById('confirmPanel');
+
+form.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  errBox.classList.remove('show');
+
+  if (!form.checkValidity()) { form.reportValidity(); return; }
+
+  // collect data (combine checkboxes into one field)
+  const fd = new FormData(form);
+  const services = fd.getAll('Services');
+  const payload = {};
+  for (const [k, v] of fd.entries()) {
+    if (k === 'Services') continue;
+    if (v) payload[k] = v;
+  }
+  payload['Services Interested In'] = services.length ? services.join(', ') : 'None selected';
+  payload['_subject'] = 'New Consultation Request — ' + (fd.get('Company Name') || 'Website');
+  payload['_template'] = 'table';
+  payload['_captcha'] = 'false';
+
+  btn.disabled = true;
+  btnText.textContent = 'Sending…';
+
+  try {
+    const res = await fetch('https://formsubmit.co/ajax/Intermediaagency01@gmail.com', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify(payload)
+    });
+    if (!res.ok) throw new Error('Request failed');
+    form.style.display = 'none';
+    confirmPanel.classList.add('show');
+    document.getElementById('formCard').scrollIntoView({ behavior: 'smooth', block: 'center' });
+  } catch (err) {
+    errBox.classList.add('show');
+    btn.disabled = false;
+    btnText.textContent = 'Submit Consultation Request';
+  }
+});
+</script>
+</body>
+</html>
